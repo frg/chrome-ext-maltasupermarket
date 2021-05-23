@@ -28,5 +28,6 @@ Desktop.ini
 $RECYCLE.BIN/
 
 dist/
+build/
 node_modules/
 .tmp
