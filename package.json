@@ -27,12 +27,14 @@
     "nodemonConfig": {
         "ignore": [
             "dist/",
+            "build/",
+            "assets/",
             "node_modules"
         ],
         "execMap": {
             "js": "node"
         },
-        "ext": "js html css",
+        "ext": "js html css json",
         "verbose": true
     },
     "dependencies": {
