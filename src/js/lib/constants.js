@@ -1,25 +1,25 @@
 export const extensionClass = "mltsprmarket-extension";
 
 export const order = {
-  none: 0,
-  desc: 100,
-  asc: 200
+    none: 0,
+    desc: 100,
+    asc: 200,
 };
 
 export const orderToText = (sortOrder) => {
-  let text = "";
+    let text = "";
 
-  switch (sortOrder) {
+    switch (sortOrder) {
     case order.desc:
-      text = "Price: Highest per Unit first";
-      break;
+        text = "Price: Highest per Unit first";
+        break;
     case order.asc:
-      text = "Price: Lowest per Unit first";
-      break;
+        text = "Price: Lowest per Unit first";
+        break;
     default:
-      text = "";
-      break;
-  }
+        text = "";
+        break;
+    }
 
-  return text;
-}
+    return text;
+};

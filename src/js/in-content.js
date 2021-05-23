@@ -19,7 +19,7 @@ let port = null;
 const sendPortMessage = data => port.postMessage(data);
 
 // Handle incoming popup messages
-const popupMessageHandler = message => console.log('in-content.js - message from popup:', message);
+const popupMessageHandler = message => console.log("in-content.js - message from popup:", message);
 
 // Start scripts after setting up the connection to popup
 chrome.extension.onConnect.addListener(popupPort => {
@@ -27,25 +27,25 @@ chrome.extension.onConnect.addListener(popupPort => {
     popupPort.onMessage.addListener(popupMessageHandler);
     // Set listener for disconnection (aka. popup closed)
     popupPort.onDisconnect.addListener(() => {
-        console.log('in-content.js - disconnected from popup');
+        console.log("in-content.js - disconnected from popup");
     });
     // Make popup port accessible to other methods
     port = popupPort;
     // Perform any logic or set listeners
-    sendPortMessage('message from in-content.js');
+    sendPortMessage("message from in-content.js");
 });
 
 // Response handler for short lived messages
 const handleBackgroundResponse = response =>
-    console.log('in-content.js - Received response:', response);
+    console.log("in-content.js - Received response:", response);
 
 // Send a message to background.js
-chrome.runtime.sendMessage('Message from in-content.js!', handleBackgroundResponse);
+chrome.runtime.sendMessage("Message from in-content.js!", handleBackgroundResponse);
 
 console.info("🔰 Loading");
 
 // If non existent append sort option to dropdown list. This is done through a listener because the element is dynamically generated.
-document.addEventListener('click', event => {
+document.addEventListener("click", event => {
     if (event.target) {
         // Identify if the sort options dropdown was clicked
         if (event.target.matches(selectors.sortByDropdownClickables)) {
@@ -77,15 +77,15 @@ document.addEventListener('click', event => {
                 console.info("🔰 Detected items in DOM");
 
                 switch (setting.sortOrder) {
-                    case constants.order.asc:
-                        setSortOptionsSelection(constants.order.asc);
-                        break;
-                    case constants.order.desc:
-                        setSortOptionsSelection(constants.order.desc);
-                        break;
-                    case constants.order.none:
-                    default:
-                        break;
+                case constants.order.asc:
+                    setSortOptionsSelection(constants.order.asc);
+                    break;
+                case constants.order.desc:
+                    setSortOptionsSelection(constants.order.desc);
+                    break;
+                case constants.order.none:
+                default:
+                    break;
 
                 }
             });

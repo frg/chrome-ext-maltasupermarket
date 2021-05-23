@@ -4,67 +4,67 @@ import { setOrderSetting } from "./persistence.js";
 import { sortItems } from "./items.js";
 
 const injectItemsIntoDOM = (items) => {
-  // Add sorted items to parent element
-  const ul = document.createElement("ul");
-  items.forEach(x => {
-    ul.prepend(x);
-  });
+    // Add sorted items to parent element
+    const ul = document.createElement("ul");
+    items.forEach(x => {
+        ul.prepend(x);
+    });
 
-  // Place sorted items in page
-  const tabContentEl = document.querySelector(selectors.itemsContainer);
-  tabContentEl.querySelector('ul').remove();
-  tabContentEl.appendChild(ul);
+    // Place sorted items in page
+    const tabContentEl = document.querySelector(selectors.itemsContainer);
+    tabContentEl.querySelector("ul").remove();
+    tabContentEl.appendChild(ul);
 
-  console.info("🔰 Sorted items injected into DOM");
-}
+    console.info("🔰 Sorted items injected into DOM");
+};
 
 const setSortOptionsDropdownText = (text) => {
-  document
-    .querySelector(selectors.sortByDropdownText)
-    .textContent = text;
-}
+    document
+        .querySelector(selectors.sortByDropdownText)
+        .textContent = text;
+};
 
 const closeSortOptionsDropdown = () => {
-  const toggleEl = document.querySelector(selectors.sortByDropdownArrowToggled);
-  if (toggleEl !== null) {
-    toggleEl.click();
-  }
-}
+    const toggleEl = document.querySelector(selectors.sortByDropdownArrowToggled);
+    if (toggleEl !== null) {
+        toggleEl.click();
+    }
+};
 
 const setSortOptionsSelection = (sortOrder) => {
-  setOrderSetting(sortOrder);
+    setOrderSetting(sortOrder);
 
-  const unsortedItems = [...document
-    .querySelectorAll(selectors.items)];
+    const unsortedItems = [...document
+        .querySelectorAll(selectors.items)];
     
-  const sortedItems = sortItems(unsortedItems, sortOrder);
+    const sortedItems = sortItems(unsortedItems, sortOrder);
 
-  injectItemsIntoDOM(sortedItems);
+    injectItemsIntoDOM(sortedItems);
 
-  const text = constants.orderToText(sortOrder);
-  setSortOptionsDropdownText(text);
-}
+    const text = constants.orderToText(sortOrder);
+    setSortOptionsDropdownText(text);
+};
 
 const generateSortOptionsEl = (sortOrder) => {
-  let li = document.createElement("li");
-  let a = document.createElement("a");
+    let li = document.createElement("li");
+    let a = document.createElement("a");
 
-  const text = constants.orderToText(sortOrder);
-  a.text = text;
+    const text = constants.orderToText(sortOrder);
+    a.text = text;
 
-  a.href = "#";
-  a.className = constants.extensionClass;
-  a.onclick = () => {
-    setSortOptionsSelection(sortOrder);
+    a.href = "#";
+    a.className = constants.extensionClass;
+    a.onclick = () => {
+        setSortOptionsSelection(sortOrder);
 
-    closeSortOptionsDropdown();
-  };
+        closeSortOptionsDropdown();
+    };
 
-  li.appendChild(a);
-  return li;
-}
+    li.appendChild(a);
+    return li;
+};
 
 export {
-  setSortOptionsSelection,
-  generateSortOptionsEl
-}
+    setSortOptionsSelection,
+    generateSortOptionsEl
+};

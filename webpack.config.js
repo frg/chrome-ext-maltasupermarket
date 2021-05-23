@@ -1,6 +1,7 @@
+/*global require, module, __dirname*/
+
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
-const { version } = require("./package.json");
 
 module.exports = {
     mode: "production",
@@ -8,11 +9,11 @@ module.exports = {
     entry: {
         popup: "./src/js/popup.js",
         background: "./src/js/background.js",
-        "in-content": "./src/js/in-content.js"
+        "in-content": "./src/js/in-content.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].js"
+        filename: "[name].js",
     },
 
     cache: true,
@@ -23,21 +24,21 @@ module.exports = {
             {
                 test: /\.js?$/,
                 include: [path.resolve(__dirname, "src")],
-                use: "babel-loader"
-            }
-        ]
+                use: "babel-loader",
+            },
+        ],
     },
 
     plugins: [
         new CopyPlugin({
-          patterns: [
-            { from: "./manifest.json" },
-            { from: "./src/images" },
-            { from: "./src/views" },
-          ],
-          options: {
-            concurrency: 100,
-          },
+            patterns: [
+                { from: "./manifest.json" },
+                { from: "./src/images" },
+                { from: "./src/views" },
+            ],
+            options: {
+                concurrency: 100,
+            },
         }),
-    ]
+    ],
 };

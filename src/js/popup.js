@@ -28,7 +28,7 @@ const initPopupScript = () => {
             chrome.tabs.query(
                 {
                     active: true,
-                    currentWindow: true
+                    currentWindow: true,
                 },
                 tabs => resolve(tabs[0])
             );
@@ -36,19 +36,19 @@ const initPopupScript = () => {
 
     // Handle port messages
     const messageHandler = message => {
-        console.log('popup.js - received message:', message);
+        console.log("popup.js - received message:", message);
     };
 
     // Find the current active tab, then open a port to it
     getTab().then(tab => {
         // Connects to tab port to enable communication with inContent.js
-        port = chrome.tabs.connect(tab.id, { name: 'chrome-extension-template' });
+        port = chrome.tabs.connect(tab.id, { name: "chrome-extension-template" });
         // Set up the message listener
         port.onMessage.addListener(messageHandler);
         // Send a test message to in-content.js
-        sendPortMessage('Message from popup!');
+        sendPortMessage("Message from popup!");
     });
 };
 
 // Fire scripts after page has loaded
-document.addEventListener('DOMContentLoaded', initPopupScript);
+document.addEventListener("DOMContentLoaded", initPopupScript);
