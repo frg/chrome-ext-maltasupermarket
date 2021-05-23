@@ -22,7 +22,7 @@ const sendPortMessage = data => port.postMessage(data);
 const popupMessageHandler = message => console.log("in-content.js - message from popup:", message);
 
 // Start scripts after setting up the connection to popup
-chrome.extension.onConnect.addListener(popupPort => {
+chrome.runtime.onConnect.addListener(popupPort => {
     // Listen for popup messages
     popupPort.onMessage.addListener(popupMessageHandler);
     // Set listener for disconnection (aka. popup closed)
