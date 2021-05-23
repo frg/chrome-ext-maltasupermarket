@@ -22,10 +22,12 @@ Pull requests with the aim of enchancing the experience of the maltasupermarket.
 
 ## Commands
 
-|Command         |Description                                                   |
-|----------------|--------------------------------------------------------------|
-|`npm run start` |Starts a service that will build the dist files on file change|
-|`npm run build` |Builds the dist files                                         |
+|Command         |Description                                                                  |
+|----------------|-----------------------------------------------------------------------------|
+|`npm run start` |Starts a service that will build the dist files on file change               |
+|`npm run build` |Builds the dist files                                                        |
+|`npm run zip`   |Created a zip file of the dist folder to be uploaded to the Chrome App Store |
+|`npm run lint`  |Lint the project and auto fix issues where possible                          |
 
 ## Testing
 
