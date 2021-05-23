@@ -14,7 +14,6 @@
         "bestzip": "^2.2.0",
         "copy-webpack-plugin": "^9.0.0",
         "eslint": "^7.27.0",
-        "eslint-plugin-react": "^7.1.0",
         "nodemon": "^2.0.7",
         "webpack": "^5.37.1",
         "webpack-cli": "^4.7.0"
@@ -22,7 +21,8 @@
     "scripts": {
         "start": "nodemon --exec npm run build",
         "build": "webpack",
-        "zip": "npm run build && mkdir build && cd dist/ && bestzip ../build/chrome-ext-maltasupermarket.zip *"
+        "zip": "npm run build && mkdir build && cd dist/ && bestzip ../build/chrome-ext-maltasupermarket.zip *",
+        "lint": "eslint --ext .js --ignore-path .gitignore . --fix"
     },
     "nodemonConfig": {
         "ignore": [
