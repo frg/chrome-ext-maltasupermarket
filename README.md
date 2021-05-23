@@ -6,9 +6,9 @@ Maltasupermarket.com provide a handy *price per unit* value for each product on 
 
 # How does it work?
 
-The extension dynamically injects a new *sort by* option called "Price: Lowest per Unit first" withint the *sort by* dropdown. Once clicked, the extension will go through all the visible products, sorts them, then replaces the products with their sorted counterpart.
+The extension dynamically injects a new *sort by* option called "Price: Lowest per Unit first" within the *sort by* dropdown. Once clicked, the extension will go through all the visible products, sorts them, then replaces the products with their sorted counterpart.
 
-Once slected the sort setting will be peristed throughout any navigation done through the site until a native *sort by*option is selected.
+Once slected the sort setting will be peristed throughout any navigation done through the site until a native *sort by* option is selected.
 
 ![dropdown demo](assets/Sort%20By%20Dropdown%20-%20Demo.gif)
 
