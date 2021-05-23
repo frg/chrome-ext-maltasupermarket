@@ -1,0 +1,42 @@
+{
+    "manifest_version": 2,
+    "name": "Sort by price per unit - Maltasupermarket.com",
+    "version": "0.0.1",
+    "description": "Enables the ability to sort by price per unit on maltasupermarket.com",
+    "icons": {
+        "16": "16x16.png",
+        "48": "48x48.png",
+        "128": "128x128.png"
+    },
+    "browser_action": {
+        "default_title": "Boilerplate popup!",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "include_globs": [
+                "*://*.maltasupermarket.*/*"
+            ],
+            "js": [
+                "in-content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; img-src * data: 'self' 'unsafe-eval'",
+    "offline_enabled": true,
+    "permissions": [
+        "tabs",
+        "<all_urls>",
+        "activeTab",
+        "storage"
+    ]
+}
