@@ -8,26 +8,18 @@
  */
 
 try {
-    // A sample object that will be exposed further down and used on popup.js
-    const sampleBackgroundGlobal = { // eslint-disable-line no-unused-vars
-        message: "This object comes from background.js",
-    };
-
-    // Listen to short lived messages from in-content.js
-    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    // Perform any ther actions depending on the message
-        console.log("background.js - received message from in-content.js:", message);
-        // Respond message
-        sendResponse("👍");
-    });
-
     // Set active icon when correct domain is active
     chrome.tabs.onActivated.addListener((activeInfo) => {
         console.info("🔰 Detected active tab change");
+        
         chrome.tabs.get(activeInfo.tabId, async (tab) => {
             console.info(`🔰 Active domain: '${tab.url}'`);
 
-            const domain = (new URL(tab.url)).host.split(".")[1];
+            const url = new URL(tab.url);
+            const domainRegex = new RegExp(/(?:[a-zA-Z0-9]*\.)*([a-zA-Z0-9]+)\.[a-zA-Z0-9]+/, "g");
+            const domainMatch = [...(url.host).matchAll(domainRegex)];
+            const domain = domainMatch.length === 0 ? url.host : domainMatch[0][1] ?? url.host;
+
             console.info(`🔰 Parsed active domain: '${domain}'`);
             
             if (domain === "maltasupermarket") {
