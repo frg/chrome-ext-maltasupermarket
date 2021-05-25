@@ -1,16 +1,9 @@
-/* in-content.js
-*
-* This file has an example on how to communicate with other parts of the extension through a long lived connection (port) and also through short lived connections (chrome.runtime.sendMessage).
-*
-* Note that in this scenario the port is open from the popup, but other extensions may open it from the background page or not even have either background.js or popup.js.
-* */
-
 import "arrive";
 
-import * as constants from "./lib/constants.js";
-import * as selectors from "./lib/dom-selectors.js";
-import { getOrderSettingAsync, setOrderSetting } from "./lib/persistence.js";
-import { setSortOptionsSelection, generateSortOptionsEl } from "./lib/dom.js";
+import * as constants from "./lib/sort/constants.js";
+import * as selectors from "./lib/sort/dom-selectors.js";
+import { getOrderSettingAsync, setOrderSetting } from "./lib/sort/persistence.js";
+import { setSortOptionsSelection, generateSortOptionsEl } from "./lib/sort/dom.js";
 
 console.info("🔰 Loading");
 
