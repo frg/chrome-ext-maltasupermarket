@@ -3,6 +3,24 @@ import * as selectors from "./dom-selectors.js";
 import { setOrderSetting } from "./persistence.js";
 import { sortItems } from "./items.js";
 
+const orderToText = (sortOrder) => {
+    let text = "";
+
+    switch (sortOrder) {
+    case constants.order.desc:
+        text = "Price: Highest per Unit first";
+        break;
+    case constants.order.asc:
+        text = "Price: Lowest per Unit first";
+        break;
+    default:
+        text = "";
+        break;
+    }
+
+    return text;
+};
+
 const injectItemsIntoDOM = (items) => {
     // Add sorted items to parent element
     const ul = document.createElement("ul");
@@ -41,7 +59,7 @@ const setSortOptionsSelection = (sortOrder) => {
 
     injectItemsIntoDOM(sortedItems);
 
-    const text = constants.orderToText(sortOrder);
+    const text = orderToText(sortOrder);
     setSortOptionsDropdownText(text);
 };
 
@@ -49,7 +67,7 @@ const generateSortOptionsEl = (sortOrder) => {
     let li = document.createElement("li");
     let a = document.createElement("a");
 
-    const text = constants.orderToText(sortOrder);
+    const text = orderToText(sortOrder);
     a.text = text;
 
     a.href = "#";

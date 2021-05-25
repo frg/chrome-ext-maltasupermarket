@@ -1,16 +1,17 @@
 import * as constants from "./constants.js";
 
-const sortItems = (items, sortOrder) => {
-    let orderFunc;
+const generateSortFunc = (sortOrder) => {
     switch (sortOrder) {
     case constants.order.desc:
-        orderFunc = (a, b) => a.value - b.value;
-        break;
+        return (a, b) => a.value - b.value;
     case constants.order.asc:
     default:
-        orderFunc = (a, b) => b.value - a.value;
-        break;
+        return (a, b) => b.value - a.value;
     }
+};
+
+const sortItems = (items, sortOrder) => {
+    let sortFunc = generateSortFunc(sortOrder);
 
     // Find all items price per unit values
     const sortedItems =
@@ -25,7 +26,7 @@ const sortItems = (items, sortOrder) => {
                 element: x,
             };
         })
-        .sort(orderFunc);
+        .sort(sortFunc);
 
     console.info(`🔰 Found '${sortedItems.length}' items`);
 
