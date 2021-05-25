@@ -1,9 +1,9 @@
 {
-    "name": "chrome-ext-maltasupermarket.com",
+    "name": "webextension-maltasupermarket",
     "version": "0.0.1",
-    "description": "Chrome extension to enchance the maltasupermarket.com experience",
+    "description": "Web extension to enchance the maltasupermarket.com experience",
     "main": "src/index.js",
-    "repository": "git@github.com:frg/chrome-ext-maltasupermarket.git",
+    "repository": "git@github.com:frg/webextension-maltasupermarket.git",
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.14.3",
@@ -21,7 +21,7 @@
     "scripts": {
         "start": "nodemon --exec npm run build",
         "build": "webpack",
-        "zip": "npm run build && mkdir build && cd dist/ && bestzip ../build/chrome-ext-maltasupermarket.zip *",
+        "zip": "npm run build && mkdir build && cd dist/ && bestzip ../build/webextension-maltasupermarket.zip *",
         "lint": "eslint --ext .js --ignore-path .gitignore . --fix"
     },
     "nodemonConfig": {

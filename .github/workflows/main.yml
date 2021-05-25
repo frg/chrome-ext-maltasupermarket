@@ -34,7 +34,7 @@ jobs:
             # ID of the extension that you are updating
             extension: ${{ secrets.EXTENSION_ID }}
             # Path to a .zip of your addon
-            zip: build/chrome-ext-maltasupermarket.zip
+            zip: build/webextension-maltasupermarket.zip
             # Google OAuth2 client id
             client-id: ${{ secrets.CLIENT_ID }}
             # Google OAuth2 client secret

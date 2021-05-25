@@ -1,6 +1,6 @@
-# Maltasupermarket.com Chrome Extension	
+# Maltasupermarket.com Web Extension	
 
-[Maltasupermarket.com](https://www.maltasupermarket.com) provides a handy *price per unit* value for each product on their site but unfortunately they do not provide the ability to search by this value. This Chrome Extension gives the website this ability.
+[Maltasupermarket.com](https://www.maltasupermarket.com) provides a handy *price per unit* value for each product on their site but unfortunately they do not provide the ability to search by this value. This Web Extension gives the website this ability.
 
 ![price per unit values](assets/Price%20per%20Unit%20640x400.jpg)
 
