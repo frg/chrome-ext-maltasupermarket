@@ -26,6 +26,103 @@
             "error",
             "always"
         ],
+        "eqeqeq": [
+            "error",
+            "always"
+        ],
+        "curly": [
+            "error"
+        ],
+        "no-else-return": [
+            "error"
+        ],
+        "no-implicit-coercion": [
+            "error"
+        ],
+        "no-multi-spaces": [
+            "error"
+        ],
+        "no-useless-return": [
+            "error"
+        ],
+        "wrap-iife": [
+            "error", 
+            "outside"
+        ],
+        "array-bracket-newline": [
+            "error",
+            "consistent"
+        ],
+        "no-undef-init": [
+            "error"
+        ],
+        "array-bracket-spacing": [
+            "error",
+            "never"
+        ],
+        "block-spacing": [
+            "error"
+        ],
+        "brace-style": [
+            "error"
+        ],
+        "comma-spacing": [
+            "error", { "before": false, "after": true }
+        ],
+        "comma-style": [
+            "error", "last"
+        ],
+        "computed-property-spacing": [
+            "error", "never"
+        ],
+        "eol-last": [
+            "error", "always"
+        ],
+        "func-call-spacing": [
+            "error", "never"
+        ],
+        "implicit-arrow-linebreak": [
+            "error", "beside"
+        ],
+        "key-spacing": [
+            "error", { "beforeColon": false }
+        ],
+        "keyword-spacing": [
+            "error", { "before": true }
+        ],
+        "lines-between-class-members": [
+            "error", "always"
+        ],
+        "newline-per-chained-call": [
+            "error", { "ignoreChainWithDepth": 2 }
+        ],
+        "no-multiple-empty-lines": [
+            "error"
+        ],
+        "no-trailing-spaces": [
+            "error"
+        ],
+        "no-unneeded-ternary": [
+            "error"
+        ],
+        "no-whitespace-before-property": [
+            "error"
+        ],
+        "prefer-object-spread": [
+            "error"
+        ],
+        "semi-style": [
+            "error", "last"
+        ],
+        "space-before-blocks": [
+            "error"
+        ],
+        "space-in-parens": [
+            "error", "never"
+        ],
+        "switch-colon-spacing": [
+            "error"
+        ],
         "comma-dangle": ["error", {
             "arrays": "always-multiline",
             "objects": "always-multiline",

@@ -38,6 +38,7 @@
         "verbose": true
     },
     "dependencies": {
-        "arrive": "^2.4.1"
+        "arrive": "^2.4.1",
+        "webext-options-sync": "^2.0.1"
     }
 }

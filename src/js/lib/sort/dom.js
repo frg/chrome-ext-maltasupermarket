@@ -1,6 +1,6 @@
 import * as constants from "./constants.js";
 import * as selectors from "./dom-selectors.js";
-import { setOrderSetting } from "./persistence.js";
+import * as persistence from "../persistence.js";
 import { sortItems } from "./items.js";
 
 const orderToText = (sortOrder) => {
@@ -50,11 +50,13 @@ const closeSortOptionsDropdown = () => {
 };
 
 const setSortOptionsSelection = (sortOrder) => {
-    setOrderSetting(sortOrder);
+    persistence.set(constants.settingKeys.sortOrder, sortOrder);
 
-    const unsortedItems = [...document
-        .querySelectorAll(selectors.items)];
-    
+    const unsortedItems = [
+        ...document
+            .querySelectorAll(selectors.items),
+    ];
+
     const sortedItems = sortItems(unsortedItems, sortOrder);
 
     injectItemsIntoDOM(sortedItems);

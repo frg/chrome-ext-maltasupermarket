@@ -28,7 +28,7 @@ const onTabUpdated = (tabId, changeInfo) => {
 };
 
 const addListeners = () => {
-    try {    
+    try {
         console.info("🔰 Initialising on onTabURLChange listeners");
 
         chrome.tabs.onActivated.addListener(onTabActivated);

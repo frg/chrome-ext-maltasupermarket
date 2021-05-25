@@ -5,3 +5,7 @@ export const order = {
     desc: 100,
     asc: 200,
 };
+
+export const settingKeys = {
+    sortOrder: "sortOrder",
+};
