@@ -39,6 +39,6 @@ Enable *Developer Mode* by clicking the toggle at the top right of the page, a s
 ![enable developer mode](assets/Chrome%20extensions%20developer%20mode.jpg)
 
 Click on *Load unpacked* and select the *dist* folder. The extension is now installed.
-![click load unpacked](assets/Chrome%20extensions%20-%20load%20unpacked.jpg)
+![click load unpacked](assets/Chrome%20extensions%20-%20Load%20unpacked.jpg)
 
 When the *dist* folder is updated, either click on the reload icon next to your Chrome extension, or you can use [Extensions Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) which gives the convenient ability to reload all unpacked extensions through a button click.
