@@ -1,21 +1,21 @@
 import * as constants from "./constants.js";
 import * as selectors from "./dom-selectors.js";
-import * as persistence from "../persistence.js";
+import * as persistence from "../../lib/persistence.js";
 import { sortItems } from "./items.js";
 
 const orderToText = (sortOrder) => {
     let text = "";
 
     switch (sortOrder) {
-    case constants.order.desc:
-        text = "Price: Highest per Unit first";
-        break;
-    case constants.order.asc:
-        text = "Price: Lowest per Unit first";
-        break;
-    default:
-        text = "";
-        break;
+        case constants.order.desc:
+            text = "Price: Highest per Unit first";
+            break;
+        case constants.order.asc:
+            text = "Price: Lowest per Unit first";
+            break;
+        default:
+            text = "";
+            break;
     }
 
     return text;

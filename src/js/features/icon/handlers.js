@@ -10,9 +10,9 @@ const setIconOnDomain = (url) => {
     console.info(`🔰 Parsed active domain: '${domain}'`);
 
     if (domain === "maltasupermarket") {
-        chrome.action.setIcon({path: "/16x16.png"});
+        chrome.action.setIcon({path: "/32x32.png"});
     } else {
-        chrome.action.setIcon({path: "/grayscale-16x16.png"});
+        chrome.action.setIcon({path: "/grayscale-32x32.png"});
     }
 };
 
