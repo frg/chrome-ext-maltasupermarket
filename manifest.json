@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Sort by price per unit - Maltasupermarket.com",
-    "version": "0.0.1",
+    "version": "0.0.0-local",
     "description": "Enables the ability to sort by price per unit on maltasupermarket.com",
     "icons": {
         "16": "16x16.png",
@@ -22,7 +22,8 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.maltasupermarket.com/*"
+                "*://*.maltasupermarket.com/*",
+                "*://maltasupermarket.com/*"
             ],
             "js": [
                 "in-content.js"
