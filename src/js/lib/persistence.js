@@ -1,5 +1,5 @@
 import OptionsSync from "webext-options-sync";
-import {settingKeys, order} from "./sort/constants.js";
+import {settingKeys, order} from "/src/js/features/sort/constants.js";
 
 const defaults = {};
 defaults[settingKeys.sortOrder] = order.none;
