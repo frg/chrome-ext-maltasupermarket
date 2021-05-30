@@ -34,5 +34,9 @@
     "permissions": [
         "tabs",
         "storage"
+    ],
+    "host_permissions": [
+      "*://*.maltasupermarket.com/*",
+      "*://maltasupermarket.com/*"
     ]
 }
