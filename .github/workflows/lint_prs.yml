@@ -27,6 +27,12 @@ jobs:
       id: gitversion # step id used as reference for output values
       uses: gittools/actions/gitversion/execute@v0.9.9
 
+    - name: Replace Version in _config.yml
+      uses: datamonsters/replace-action@v2
+      with:
+        files: 'manifest.json'
+        replacements: '0.0.0-local=${{ steps.gitversion.outputs.semVer }}'
+
     - name: Cache dependencies
       uses: actions/cache@v2
       with:
