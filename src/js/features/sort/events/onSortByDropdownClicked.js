@@ -1,7 +1,7 @@
 import mitt from "mitt";
 import {on, off} from "delegated-events";
 
-import * as selectors from "../dom-selectors.js";
+import * as selectors from "../selectors.js";
 
 const eventName = "onSortByDropdownClicked";
 const emitter = mitt();

@@ -1,6 +1,6 @@
+import * as persistence from "/src/js/lib/persistence.js";
 import * as constants from "./constants.js";
-import * as selectors from "./dom-selectors.js";
-import * as persistence from "../../lib/persistence.js";
+import * as selectors from "./selectors.js";
 import { sortItems } from "./items.js";
 
 const orderToText = (sortOrder) => {

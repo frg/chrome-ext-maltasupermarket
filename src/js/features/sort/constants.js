@@ -1,4 +1,4 @@
-export const extensionClass = "mltsprmarket-extension";
+export const extensionClass = "mltsprmarket-webext-sort";
 
 export const order = {
     none: 0,

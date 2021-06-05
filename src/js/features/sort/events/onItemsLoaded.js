@@ -1,7 +1,7 @@
 import "arrive";
 import mitt from "mitt";
 
-import * as selectors from "../dom-selectors.js";
+import * as selectors from "../selectors.js";
 
 const event = "onItemsLoaded";
 const emitter = mitt();
