@@ -22,12 +22,13 @@
         "eslint": "^7.27.0",
         "nodemon": "^2.0.7",
         "webpack": "^5.37.1",
-        "webpack-cli": "^4.7.0"
+        "webpack-cli": "^4.7.0",
+        "webpack-merge": "^5.7.3"
     },
     "scripts": {
-        "start": "nodemon --exec npm run build",
-        "build": "webpack",
-        "zip": "npm run build && mkdir build && cd dist/ && bestzip ../build/webextension-maltasupermarket.zip *",
+        "start": "rm -rf ./dist && nodemon --exec \"webpack --config webpack.dev.js\"",
+        "build": "rm -rf ./dist && webpack --config webpack.prod.js",
+        "zip": "rm -rf ./build && npm run build && mkdir build && cd dist/ && bestzip ../build/webextension-maltasupermarket.zip *",
         "lint": "eslint --ext .js --ignore-path .gitignore . --fix"
     },
     "nodemonConfig": {
