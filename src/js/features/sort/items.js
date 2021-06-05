@@ -17,9 +17,11 @@ const sortItems = (items, sortOrder) => {
     const sortedItems =
     items
         .map(x => {
+            const defaultValue = Number.MAX_VALUE.toString();
             const pricePerUnitEl = x.querySelector(".add-product em");
-            const pricePerUnitText = pricePerUnitEl !== null ? pricePerUnitEl.innerHTML : "";
-            const pricePerUnitInt = parseFloat(pricePerUnitText.match(/[0-9]*\.[0-9]*/g)[0] ?? 0);
+            const pricePerUnitText = (pricePerUnitEl !== null ? pricePerUnitEl.innerHTML : defaultValue) ?? defaultValue;
+            const pricePerUnitTextMatch = pricePerUnitText.match(/[0-9]*\.[0-9]*/g);
+            const pricePerUnitInt = parseFloat(pricePerUnitTextMatch !== null ? pricePerUnitTextMatch[0] : defaultValue);
 
             return {
                 value: pricePerUnitInt,
