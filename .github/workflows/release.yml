@@ -31,7 +31,7 @@ jobs:
       uses: datamonsters/replace-action@v2
       with:
         files: 'manifest.json'
-        replacements: '0.0.0-local=${{ steps.gitversion.outputs.semVer }}'
+        replacements: '0.0.0=${{ steps.gitversion.outputs.semVer }}'
 
     - name: Cache dependencies
       uses: actions/cache@v2
